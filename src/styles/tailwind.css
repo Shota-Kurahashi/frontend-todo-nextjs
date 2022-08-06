@@ -1,15 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  @apply text-4xl sm:text-5xl md:text-6xl;
-}
+@layer base {
+  body {
+    @apply font-Inter tracking-wide;
+  }
 
-h2 {
-  @apply text-3xl sm:text-4xl md:text-5xl;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
 
-li {
-  @apply cursor-pointer;
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+
+  li {
+    @apply cursor-pointer;
+  }
 }
