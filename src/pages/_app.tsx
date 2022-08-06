@@ -37,7 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         withNormalizeCSS
         theme={{
           colorScheme: "dark",
-          fontFamily: "Verdana, sans-serif",
+          fontFamily: "Inter, sans-serif",
         }}
       >
         <Component {...pageProps} />
