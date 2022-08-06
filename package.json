@@ -15,9 +15,23 @@
     "test-all": "npm run check-format && npm run check-lint && npm run check-types"
   },
   "dependencies": {
+    "@emotion/react": "11.10.0",
+    "@emotion/server": "11.10.0",
+    "@heroicons/react": "1.0.6",
+    "@mantine/core": "5.0.2",
+    "@mantine/form": "5.0.2",
+    "@mantine/hooks": "5.0.2",
+    "@mantine/next": "5.0.2",
+    "@prisma/client": "^4.1.1",
+    "@tabler/icons": "1.78.1",
+    "@tanstack/react-query": "4.0.10",
+    "@tanstack/react-query-devtools": "4.0.10",
+    "axios": "0.27.2",
     "next": "12.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "yup": "0.32.11",
+    "zustand": "4.0.0"
   },
   "devDependencies": {
     "@types/node": "18.0.4",
@@ -39,6 +53,7 @@
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.12",
+    "prisma": "^4.1.1",
     "tailwindcss": "^3.1.6",
     "typescript": "4.7.4"
   }
