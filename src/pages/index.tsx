@@ -29,7 +29,6 @@ const Home: NextPage = () => {
   const router = useRouter();
   const [isRegister, setIsRegister] = useState(false);
   const [error, setError] = useState("");
-
   const form = useForm<AuthForm>({
     validate: yupResolver(schema),
     initialValues: {
@@ -37,7 +36,6 @@ const Home: NextPage = () => {
       password: "",
     },
   });
-
   const handleSubmit = async () => {
     try {
       if (isRegister) {
@@ -58,7 +56,7 @@ const Home: NextPage = () => {
   };
 
   return (
-    <Layout title="">
+    <Layout title="Auth">
       <ShieldCheckIcon className="h-16 w-16 text-blue-500" />
       {error && (
         <Alert
@@ -80,38 +78,38 @@ const Home: NextPage = () => {
           placeholder="example@gmail.com"
           {...form.getInputProps("email")}
         />
+        <PasswordInput
+          mt="md"
+          id="password"
+          placeholder="password"
+          label="Password*"
+          description="Must be min 5 char"
+          {...form.getInputProps("password")}
+        />
+        <Group mt="xl" position="apart">
+          <Anchor
+            component="button"
+            type="button"
+            size="xs"
+            className="text-gray-300"
+            onClick={() => {
+              setIsRegister(!isRegister);
+              setError("");
+            }}
+          >
+            {isRegister
+              ? "Have an account? Login"
+              : "Don't have an account? Register"}
+          </Anchor>
+          <Button
+            leftIcon={<IconDatabase size={14} />}
+            color="cyan"
+            type="submit"
+          >
+            {isRegister ? "Register" : "Login"}
+          </Button>
+        </Group>
       </form>
-      <PasswordInput
-        mt="md"
-        id="password"
-        placeholder="password"
-        label="Password*"
-        description="Must be min 5 char"
-        {...form.getInputProps("password")}
-      />
-      <Group mt="xl" position="apart">
-        <Anchor
-          component="button"
-          type="button"
-          size="xs"
-          className="text-gray-300"
-          onClick={() => {
-            setIsRegister(!isRegister);
-            setError("");
-          }}
-        >
-          {isRegister
-            ? "Have an account? Login"
-            : "Don't have an account? Register"}
-        </Anchor>
-        <Button
-          leftIcon={<IconDatabase size={14} />}
-          color="cyan"
-          type="submit"
-        >
-          {isRegister ? "Register" : "Login"}
-        </Button>
-      </Group>
     </Layout>
   );
 };
